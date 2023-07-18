@@ -1,11 +1,13 @@
 Welcome to my repository!  
   
-My projects:  
+This is where I publish my projects (along a short description). Some of them were made as school projects, some were just projects I made up to practice.  
+  
+The projects:  
 
 1. Rummy game  
 It is a website, one of my first projects, designed for PC.  
 You can try it by opening it in two different browsers. After you enter your name, you will see other players, then by clicking on their name, you will send invite, which the they can accept.  
-I made no gamerules in the code, you can move cards as you want.  
+There are no game rules, you can move cards as you want.  
 Link for the website: http://users.atw.hu/magicland/kartya.php  
   
 2. Duck game  
