@@ -1,0 +1,37 @@
+span{
+    padding: 4px;
+
+    color: black;
+    flex:1;
+    text-align: center;
+}
+.oszlop{
+    display: flex;
+
+}
+.aktualis{
+    border: 1px solid;
+
+background: #d5d5d5;
+}
+
+.menusor{
+    display: flex;
+
+justify-content: center;
+
+
+color: white;
+
+padding: 0px;
+
+
+border-style: solid none solid none;
+
+border-color: black;
+max-width: 700px;
+width: 100%;
+}
+.kijelolt{
+    background-color: gray;
+}

@@ -1,0 +1,19 @@
+<div class="kozepre">
+    <!--<div class="menusor">
+    
+      <span [ngClass]="oldal=='bejelentkezes'?'kijelolt':''"  (click)="valaszt('bejelentkezes')">bejelentkezés</span><br>
+      <span [ngClass]="oldal=='regisztracio'?'kijelolt':''"  (click)="valaszt('regisztracio')">regisztráció</span>
+      <span [ngClass]="oldal=='edzes'?'kijelolt':''"  (click)="valaszt('edzes')">edzés</span><br>
+      <span [ngClass]="oldal=='naptar'?'kijelolt':''"  (click)="valaszt('naptar')">naptár</span>
+    
+    </div>-->
+<br>
+    <mat-toolbar class="menusor" [ngStyle]="{'visibility':oldal==''?'hidden':'visible'}">
+        <span *ngIf="!felhasznalo" [ngClass]="oldal=='bejelentkezes'?'kijelolt':''"  (click)="valaszt('bejelentkezes')">login</span><br>
+        <span *ngIf="!felhasznalo" [ngClass]="oldal=='regisztracio'?'kijelolt':''"  (click)="valaszt('regisztracio')">sign up</span>
+        <span *ngIf="felhasznalo" [ngClass]="oldal=='edzes'?'k_edz':''"  (click)="valaszt('edzes')">workout</span><br>
+        <span *ngIf="felhasznalo" [ngClass]="oldal=='naptar'?'k_napt':''"  (click)="valaszt('naptar')">calendar</span>
+        <!--<span *ngIf="felhasznalo" [ngClass]="oldal=='felhasznalok'?'k_about':''"  (click)="valaszt('felhasznalok')">felhasználók</span>-->
+       
+    </mat-toolbar>
+</div>

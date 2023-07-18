@@ -1,0 +1,7 @@
+<header style="margin-bottom: 2px;">
+  <div>WOURKOUT PLANNER<!--<img class="menu_gomb" src="./assets/menu.png">--> <a *ngIf="felhasznalo" (click)="kijelentkezes();" style="position: absolute;right: 1px;"><mat-icon>logout</mat-icon></a></div>
+</header>
+
+<app-menu (valasztott_oldal)="oldal_valt($event)" [oldal]="oldal" [felhasznalo]="felhasznalo"></app-menu>
+<br>
+<router-outlet></router-outlet>

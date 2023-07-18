@@ -1,0 +1,173 @@
+.sor{
+    border-bottom: 1px solid floralwhite;
+}
+.lenyitott_nap>span:nth-child(1){
+    visibility: hidden;
+    position: relative;
+}
+.lenyitott_nap>span:nth-child(1)::before{
+    content: ' ';
+    width: 50%;
+    width: 40%;
+    border-left: 1px solid white;
+    visibility: visible;
+    border-bottom: 1px solid white;
+    position: absolute;
+    display: block;
+    height: 30px;
+    top: -12px;
+}
+.lenyitott_nap>span:nth-child(2){
+    flex-grow: 1;
+    border-top:1px solid floralwhite;
+
+    border-top: 1px solid floralwhite;
+    border: 1px solid floralwhite;
+    
+    border-radius: 5px;
+}
+.lenyitott_nap>span{
+    padding:5px;
+}
+.sor_nap .napi_rutinok{
+    padding:0px 3px 0px 3px;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+
+.listaelem{
+    padding-left: 15px;
+    position: relative;
+}.listaelem::before{
+    content: ' ';
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: darkseagreen;
+    position: absolute;
+    top: calc(50% - 1.5px);
+    left: 3px;
+}
+.lenyitott_nap .listaelem::before{
+    /*top: 50%;*//*ne kérdezd*/
+}
+.rutinjaim .listaelem
+{
+    margin-bottom: 5px;
+}
+.edzes{
+    border-radius: 5px;
+    max-width: 700px;
+    width: calc(100% - 8px);
+    color:white;
+    background-color: #2f2f2f;
+
+}
+.edzes .sor_nap{
+    display: flex;
+    padding:0px 3px 0px 5px;
+}
+.edzes .sor_nap>span{
+    display:flex;
+    align-items: center;
+}
+.edzes .sor_nap span:nth-child(2){
+    flex-grow: 1;
+    text-align: center;
+    word-wrap: break-word;
+}
+.edzes .cim{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+.rutinjaim{
+    /*background-color: darkseagreen;*/
+    background-color: #2f2f2f; color:white;
+    max-width: 700px;
+    width: calc(100% - 8px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #131313;
+    box-sizing: border-box;
+}
+.rutinjaim>div:nth-child(1){
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+    position: relative;
+}
+.rutinjaim>div:nth-child(1)>span:nth-child(1){
+    position: absolute;
+    right:5px;
+    color:darkseagreen;
+    font-family: arial;
+}
+.rutinjaim .rutinok{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.rutinjaim .rutinok>span:nth-child(2){/*hogy ne töltse ki a teret a rutin blokkja*/
+    flex-grow: 1;
+}
+.rutinjaim input[type='text']{
+    background-color: white;
+    border: 1px solid cornflowerblue;
+    outline: none;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 3px;
+}
+.rutinjaim .plus_icon{
+    margin-left: 5px;
+}
+a:hover{
+    /*text-decoration: underline;*/
+    filter: brightness(90%);
+}
+.lenyitott_nap{
+    padding: 5px;
+    display:flex;
+    flex-wrap:wrap;
+}
+.lenyit_spn{
+    font-weight: bold;
+    cursor: pointer;
+    color: cornflowerblue;
+}
+.lap{/*ugyanaz kb mint a ".napirutin a" */
+    background-color: cornflowerblue;
+    padding: 4px 8px;
+    color: black;
+    border-radius: 5px;
+    margin: 0px 0px 5px 5px;
+    cursor: pointer;
+}
+.rutin_eltavolit{
+    background-color: #d99720;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 3px;
+    
+    color: white;
+    letter-spacing: 1px;
+}
+.rutin_torlese{
+    background-color: #ff1515;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 3px;
+    
+    letter-spacing: 1px;
+}

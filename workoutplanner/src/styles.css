@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: rgb(30,30,30);
+    background-color: floralwhite;
+    color: rgb(200,200,200);
+    color: black;
+    margin:4px;
+}
+header{
+    height: 50px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header>div{
+    height: 50px;
+    background-color: #262626;
+    color: white;
+    font-weight: bold;
+    font-family: arial;
+    max-width: 700px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.nyil{
+    font-size: 30px;
+}
+.plus_icon{
+    width: 21px;
+}
+.napi_rutinok a{
+    background-color: cornflowerblue;
+    /*border: 2px solid black;*/
+    padding: 4px;
+    color: black;
+    border-radius: 5px;
+    margin:8px 0px 8px 5px;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.katt_dv{
+    position: fixed;
+    top:0px; left:0px;bottom:0px;right:0px;
+}
+.kozepre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu_gomb{
+    width: 24px;
+    position: absolute;
+    right:10px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

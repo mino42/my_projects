@@ -1,0 +1,100 @@
+.naptar{
+    width: calc(100% - 8px);
+    max-width: 700px;
+}
+.honapok{
+    background-color: darkseagreen;
+    border-bottom: 3px black solid;
+}
+.honapok>div{
+    display:flex;
+    flex-wrap: wrap;
+    gap:3px;
+    justify-content: center;
+}
+.honap{
+    
+    text-align: center;
+    background-color: darkseagreen;
+    padding:5px;
+}
+.valasztott_honap{
+    filter: brightness(90%);
+}
+.ev{
+    display:flex;
+    text-align: center;
+    align-items: center;
+    filter: brightness(80%);
+    background-color: darkseagreen;
+    padding: 0px 5px;
+}
+.ev>span:nth-child(2){
+    flex-grow: 1;
+}
+.napok{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2px;
+    overflow-y: auto;
+    background-color: darkseagreen;
+    justify-content: center;
+    padding: 3px;
+}
+.nap{
+    width: 34px;
+    display: flex;
+    background-color: darkseagreen;
+    padding: 6px;
+    text-align: center;
+    filter: brightness(90%);
+    justify-content: center;
+    flex-direction: column;
+    height: 32px;
+}
+.valasztott_nap{
+    color:red;
+}
+.napi_gyakorlatok{
+    /*background-color: darkseagreen;*/
+    background-color: darkseagreen;
+    color:black;
+    max-width: 700px;
+    width: calc(100% - 8px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #131313;
+    box-sizing: border-box;
+    filter: brightness(80%);
+}
+.gyakorlat{
+    display:flex;
+}
+.napi_gyakorlatok>div:nth-child(1){
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding: 5px;
+    
+    background-color: darkseagreen;
+}
+
+.napi_gyakorlatok>div:nth-child(1)>span:nth-child(1){
+    position: absolute;
+    right:10px;
+    color:black;
+    font-family: arial;
+}
+.gyakorlatok_listaja{
+    padding: 5px;
+}
+.kulso_dv{
+    max-width: 700px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}

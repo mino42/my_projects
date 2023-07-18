@@ -1,0 +1,98 @@
+
+<div  [style]="'filter:blur('+((rutin_nyitva || rutinjaim_div_megjelenitve)?'2px':'0px')+')'">
+<br>
+<div class="kozepre">
+    <div style="border-radius: 5px;padding: 5px;">Here, you can set up the days of your workout plan and each day's routines, and the exercises for each routine.</div>
+</div>
+<!--background-color: #262626;color: white;-->
+<br>
+<div class="kozepre" style="flex-direction: column;">
+<div class='edzes'>
+    <div class='cim' style='dispay:flex'><span style="flex-grow: 1;">My workout plan</span></div>
+    <div>
+        <div class='sor' *ngFor="let nap of napjaim;let i=index;">
+            <div class='sor_nap'>
+                <span>{{i+1}}</span>
+                <span class='napi_rutinok'>
+                    <ng-container *ngIf="nap.rutinok.length==0">
+                        <a>rest day</a>
+                    </ng-container>                   
+                    <ng-container *ngIf="nap.rutinok.length>0">
+                        <a *ngFor="let rutin of nap.rutinok;" (click)="rutin_megnyitas(rutin,i);">{{rutin}}</a>
+                    </ng-container>                 
+                </span>
+                <span (click)="rutinjaim_megnyit(i);" >
+                    <img style="margin-right: 3px;" class='plus_icon' src='../assets/plus.png'>
+                </span>
+                <span class='lenyit_spn nyil' style="margin-right: 1px;" (click)="lenyit(i);">
+                    <img class="plus_icon" [src]="'../assets/kek_menu.png'">
+                </span>
+                
+            </div>
+            <div class='lenyitott_nap' *ngIf="lenyitott_nap==i">
+                <span>{{i+1}}</span>
+                <span style="flex-basis: calc(100% - 40px);padding-top: 7px;">
+                    <div  *ngFor="let rutin of lenyitott_nap_rutinjai; let i = index;" [ngStyle]="{'margin-bottom':'3px','padding-bottom':'3px','border-bottom':i==lenyitott_nap_rutinjai.length-1?'none':'none'}">
+                        {{rutin.nev}}:
+                        <div class='listaelem' *ngFor="let gyakorlat of rutin.gyakorlatok">
+                            {{gyakorlat}}
+                        </div>
+                    </div>
+                </span><br>
+                <div style="display: flex;width: 100%;">
+                    <span style="flex:1;"></span>
+                    <span (click)="nap_torlese(i);" class="rutin_torlese" style="margin-top: 5px;">Delete this day</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div (click)="nap_hozzaad();" style="display: flex;justify-content: center;padding: 3px;cursor: pointer;" [ngStyle]="{'cursor':nap_hozzaadas_gomb?'pointer':'default'}">
+        <img [ngStyle]="{'visibility':nap_hozzaadas_gomb?'visible':'hidden'}" style="margin-right: 2px;" class='plus_icon' src='../assets/plus.png'>
+    </div>
+</div>
+
+</div>
+
+</div>
+<div *ngIf="(rutin_nyitva || rutinjaim_div_megjelenitve)" (click)="katt_dv_katt();" class='katt_dv'></div>
+
+
+<div class='rutinjaim' *ngIf="rutinjaim_div_megjelenitve">
+    <div> My routines <span (click)="rutinjaim_div_megjelenitve=false;" style="cursor: pointer;">X</span></div>
+    <div>Which routine do you want to add to day {{this.melyik_nap+1}}?</div><br>
+    <div class="rutinok">
+        <div *ngFor="let rutin of rutinjaim;let i = index;" style='display: flex;'>
+            <span class='lap' (click)="naphoz_ad(i)">{{rutin.nev}}</span>
+            <span></span>
+        </div>
+    </div><br>
+    <div style="display: flex;align-items: center;">Add routine: 
+        <input style="flex-grow: 1;" type='text'  [(ngModel)]="uj_rutin_input" placeholder="new routine's name">
+        
+            <img  (click)="rutin_hozzaadasa();" class='plus_icon' src='../assets/plus.png'>
+        
+    </div>
+</div>
+
+    <div class='rutinjaim' *ngIf="rutin_nyitva">
+        <div>{{kivalasztott_rutin.nev}} routine<span (click)="rutin_nyitva=false;" style="cursor:pointer;">X</span></div>
+        Exercises:
+        <div style="display: flex;" class='listaelem' *ngFor="let gyakorlat of kivalasztott_rutin.gyakorlatok;let i= index;" >
+            {{gyakorlat}}
+            <img style="" (click)="gyakorlat_torlese(i)" class='plus_icon' style="cursor: pointer;width: 16px;height: 17px;" src='../assets/trash_bin.png'>
+        </div><br>
+        <div style='display:flex;border-bottom: 1px solid black;padding-bottom: 10px;align-items: center;'>
+            Add exercise: 
+            <input style="flex-grow: 1;" type='text'  [(ngModel)]="uj_gyakorlat_input" placeholder="new exercise's name"> 
+                <img (click)="gyakorlat_hozaadasa();" class='plus_icon' src='../assets/plus.png'>
+        </div>
+        <div style='display: flex;flex-wrap: wrap;gap: 8px;padding-bottom: 10px;'>
+            <span (click)="rutin_eltavolit();" class='rutin_eltavolit' style='flex-grow: 1;text-align: center;'>Remove from day {{melyik_nap+1}}</span>
+            
+            <span class='rutin_torlese' (click)="rutin_torlese()" style='flex-grow: 1;text-align: center;'>Delete this routine</span>
+        </div>
+    </div>
+
+
+
+    

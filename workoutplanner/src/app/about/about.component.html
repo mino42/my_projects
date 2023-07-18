@@ -1,0 +1,19 @@
+<div class='kozepre'>
+<div style="padding: 5px;max-width: 700px;width: 100%;">
+<div>
+    Rajtad kívüli felhasználók:<br>
+    <mat-card *ngFor="let felh of felhasznalok">
+        <mat-card-title>{{felh.email | email_name}}</mat-card-title>
+        <br>
+      </mat-card>
+</div><br>
+<div>
+    Azok a felhasználók, akiknek üresek a napjaik:<br>
+    <mat-card *ngFor="let felh of no_lab">
+        <mat-card-content>
+            {{felh.email | email_name}}
+        </mat-card-content><br>
+      </mat-card>
+</div>
+</div>
+</div>

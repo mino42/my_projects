@@ -1,0 +1,59 @@
+<div [style]="'filter:blur('+((nyitott_nap!=-1)?'2px':'0px')+')'">
+<!--
+<div class="kozepre"><div style="max-width: 700px;width: 100%;">Edzésem kezdete: <input type='date' [(ngModel)]="kezdeti_datum_str" placeholder=""></div></div>
+-->
+<div class="kozepre" style="box-sizing: border-box;">
+<div style="display: flex;align-items: center;padding: 0px 5px;max-width: 700px;width:100%;box-sizing: border-box;">
+    <mat-hint style="min-width: 100px;">Starting date: </mat-hint>
+    <input (ngModelChange)="ujratolt()" (change)="ujratolt();" [(ngModel)]="kezdeti_datum_str" style="flex-grow:1;min-width: 59px;outline: none;" matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</div>
+</div>
+<br>
+<div class='kozepre'>
+<div class='naptar'>
+    <div class='ev'>
+        <span class='nyil' (click)="ev_lep('-');">
+            <img  class='plus_icon' src='../assets/fekete_nyil_balra.png'>
+        </span>
+        <span>{{kivalasztott_datum.getFullYear()}}</span>
+        <span class='nyil' (click)="ev_lep('+');">
+            <img  class='plus_icon' src='../assets/fekete_nyil_jobbra.png'>
+        </span>
+    </div>
+    <div class='honapok'>
+        <div [style]="'left:'+honap_left_pos">
+            <span *ngFor="let honap of honapok; let i = index" (click)="honap_allit(i);" [ngClass]="kivalasztott_datum.getMonth()==i?'honap valasztott_honap':'honap'">
+                {{honap}}
+            </span>
+        </div>
+    </div>
+    <div class='napok'>
+        <span style="position: relative;" *ngFor="let nap of napok;let i=index;" (click)="nap_katt(nap.nap)" [ngClass]="(ma.getDate()==i+1 && kivalasztott_datum.getMonth()==ma.getMonth() && kivalasztott_datum.getFullYear()==ma.getFullYear())?'nap valasztott_nap':'nap'">
+            {{nap.nap}}
+            <ng-container *ngIf="nap.rutinok.length!=0">
+                <span style="position: absolute;right: 0px;bottom: 1px;font-size: 13px;color:gray">
+                    💪
+                </span>
+            </ng-container>
+        </span>
+    </div>
+</div>
+</div>
+</div>
+<div *ngIf="(nyitott_nap!=-1)" (click)="katt_dv_katt();" class='katt_dv'>
+    <div class='napi_gyakorlatok'>
+        <div>
+            {{kivalasztott_datum.toISOString().slice(0, 10)}}
+            <span (click)="nyitott_nap=-1;">X</span>
+        </div>
+        <div class='gyakorlatok_listaja'>
+            <ng-container *ngIf="napok[nyitott_nap].rutinok.length!=0">
+                <span class='listaelem gyakorlat' *ngFor="let rutin of napok[nyitott_nap].rutinok"> {{rutin}} </span>
+            </ng-container>
+            <span *ngIf="napok[nyitott_nap].rutinok.length==0" class='listaelem'> rest day : ) </span>
+        </div>
+    </div>
+
+</div>

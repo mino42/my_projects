@@ -1,0 +1,22 @@
+<br>
+<div class='fodiv'>
+    <!--<form class='bej_form'>
+        <input type='email' [formControl]="email" placeholder="példa@gmail.com">
+        <input type='password' [formControl]="jelszo" placeholder="jelszo">
+        <input (click)="bejelent();" type='button' value='bejelentkezés'>
+    </form>-->
+
+    <form class='bej_form' (keydown.enter)="bejelent();">
+        <mat-form-field>
+            <mat-label for="email">Email</mat-label>
+            <input matInput type='email' id="email" [formControl]="email" placeholder="" value="asd4@asd.com">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label for="jelszo">Password</mat-label>
+            <input matInput type='password' id="jelszo" [formControl]="jelszo" placeholder="" value="asdasd">
+        </mat-form-field>
+        
+        <input (click)="bejelent();" type='button' value='Login'>
+    </form>
+</div>
+
