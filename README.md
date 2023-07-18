@@ -11,7 +11,7 @@ As it was not intended for the public (and I know the rules), there are no game 
 Link for the website: http://users.atw.hu/magicland/kartya.php  
   
 2. Duck game  
-It is an infinite running skill game running on a website, designed for PC. The player is playing as a duck, you need to dodge and/or shoot the enemies coming your way.  
+It is an infinitely running skill game running on a website, designed for PC. The player is playing as a duck, you need to dodge and/or shoot the enemies coming your way.  
 The files are in this repository (only html and js, images are not included).  
 Link for the website: http://users.atw.hu/magicland/duck/  
   
