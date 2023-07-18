@@ -10,7 +10,7 @@ Link for the website: http://users.atw.hu/magicland/kartya.php
 2. Duck game
 It is a website, designed for PC.
 It is an infinite running skill game. You are playing as a duck, you need to dodge and/or shoot the enemies coming your way.
-The files are in this repository.
+The files are in this repository (only html and js, images are not included).
 Link for the website: http://users.atw.hu/magicland/duck/
 
 4. Workout planner
