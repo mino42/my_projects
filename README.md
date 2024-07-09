@@ -18,9 +18,9 @@ Used languages/libraries: HTML, CSS, JS.
 Link for the website: http://users.atw.hu/magicland/duck/  
   
 3. Workout planner  
-It is a mobile first designed website, wrote in Angular. It was made as a school project.  
-It lets you create your workout plan, and provides a calendar which shows you the routines you will want to do on specific days. (Saving changes you make as the test user are turned off.)  
-The files are in the repository.  
+It is a mobile first designed website, wrote in Angular.   
+It lets you create your workout plan, and provides a calendar which shows you the routines you will want to do on specific days.  
+The files are in the repository.  (Saving changes are turned off on the site, but you can still interact with everything.)
 Used languages/libraries: HTML, CSS, JS (typescript), Angular.  
 login to use: asd4@asd.com, pass: asdasd  
 Link for the website: https://edzes-koveto.web.app/edzes  
