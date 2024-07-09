@@ -7,7 +7,7 @@ The projects:
 1. Rummy game  
 A website, one of my first projects, designed for PC.  
 You can try it by opening it in two different browsers. After you enter your name, you will see other players, then by clicking on their name, you will send invite, which they can accept.  
-As it was not intended for public (and I know the game rules), there are no game rules coded, you can move cards as you want. (except a few basic rules e.g. card cant be moved from desk to trashbin, it needs to be in hand first)  
+There are no game rules coded, you can move cards as you want. (except a few basic rules e.g. card cant be moved from desk to trashbin, it needs to be in hand first etc)  
 Used languages/libraries: HTML, CSS, JS, PHP.  
 Link for the website: http://users.atw.hu/magicland/kartya.php  
   
