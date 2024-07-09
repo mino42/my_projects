@@ -1,6 +1,6 @@
 Welcome to my repository!  
   
-This is where I collect some of my projects (along a short description). Some of them were made as school or work related projects, some were just projects I made up for practice.  
+This is where I collect some of my projects along with a short description and in most case with the source files. Some of them were made as school or work related projects, some were just projects I made up for practice.  
   
 The projects:  
   
