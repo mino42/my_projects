@@ -21,5 +21,5 @@ It lets you create your workout plan, and provides a calendar which shows you th
 The files are in the repository.  
 login to use: asd4@asd.com, pass: asdasd  
 Link for the website: https://edzes-koveto.web.app/edzes  
-
+  
 4. Use case diagram editor
