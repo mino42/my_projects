@@ -28,6 +28,6 @@ Link for the website: http://users.atw.hu/magicland/diagram
   
 5. A mapbox test project  
 It's a website with a map and a georefered image. There are four layers you can draw on. On two layers only lanes, on the other two, only polygons.
-Whatever you draw, is added to the selected layer, where you can edit and delete it from the menu on the right. For polygons and lines, their color will change to blue, when you are able to move their points around.  
+Whatever you draw, is added to the selected layer, where you can edit and delete it from the menu on the right. For polygons and lines, their color will change to blue, when you are able to move their points around. It is also possible to export/import your data.  
 It is best opened in chrome in my experience.  
 Link for the website: http://users.atw.hu/magicland/bors_proba/  
