@@ -12,7 +12,7 @@ Used languages/libraries: HTML, CSS, JS, PHP.
 Link for the website: http://users.atw.hu/magicland/kartya.php  
   
 2. Duck game  
-It is an infinitely running skill game running on a website, designed for PC. The player is playing as a duck, you need to dodge and/or shoot the enemies coming your way.  
+It is an infinitely running skill game running on a website, designed for PC. The player is playing as an astronaut vampire duck with laser eyes. The player need to dodge and/or shoot the enemies coming their way.  
 The files are in this repository (only html and js, images are not included).  
 Used languages/libraries: HTML, CSS, JS.  
 Link for the website: http://users.atw.hu/magicland/duck/  
