@@ -1,9 +1,9 @@
 Welcome to my repository!  
   
-This is where I publish my projects (along a short description). Some of them were made as school projects, some were just projects I made up to practice.  
+This is where I collect my projects (along a short description). Some of them were made as school or work related projects, some were just projects I made up for practice.  
   
 The projects:  
-
+  
 1. Rummy game  
 A website, one of my first projects, designed for PC.  
 You can try it by opening it in two different browsers. After you enter your name, you will see other players, then by clicking on their name, you will send invite, which they can accept.  
