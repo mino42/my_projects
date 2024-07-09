@@ -22,4 +22,7 @@ The files are in the repository.
 login to use: asd4@asd.com, pass: asdasd  
 Link for the website: https://edzes-koveto.web.app/edzes  
   
-4. Use case diagram editor
+4. Use case diagram editor  
+A website for creating use case diagrams.  
+Link for the website: http://users.atw.hu/magicland/diagram
+
