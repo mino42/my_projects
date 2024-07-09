@@ -1,0 +1,180 @@
+﻿<!doctype html>
+<html lang="hu">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="">
+	<title></title>
+</head>
+<body id='body' onload='loadWhenAllImagesAreLoaded();' onresize='return;onload();' style='position:absolute;left:0px;top:0px;bottom:0px;right:0px;'>
+
+<audio controls id='music' style='display:none'>
+  <source src="music.mp3" type="audio/mpeg" >
+</audio> 
+
+
+
+
+<div id='start_screen' style='width:1920px;height:960px'>
+	<div>
+		Jump / Fly: space<br>
+		Shoot: K<br>
+		Squish down: S<br>
+		Resolution: <div style='display:inline-block'>
+			<select id='res_selector' onchange='screenSizing(this.selectedOptions[0].value);' style='position:relative;top:-3px'>
+				<option selected>1920x960</option>
+				<option>1920x1080</option>
+				<option>1536x864</option>
+				<option>1366x768</option>
+			</select>
+		</div>
+	</div>
+	<div><img src='ui/start_button.png' id='play_btn' value='PLAY' onclick="startgame();"></div>
+</div>
+
+<div style='position:absolute;left:50%;top:0%;display:block;'>
+	<img src='sound_on.png' style='width:50px;' onclick="if(this.src.includes('on')) {this.src=this.src.replace('on','off'); music.volume=0;}else {this.src=this.src.replace('off','on');music.volume=1;}">
+</div>
+
+<style>
+#start_screen{
+	position:absolute;
+	left:0px;top:0px;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	background-image:url('ui/start_screen.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+#start_screen div:nth-child(2){
+	/*background-color:rgb(255,255,255,0.7);*/
+	padding:5px;
+	position:absolute;
+	bottom:2%
+}
+#start_screen div:nth-child(1){
+	color:white;
+	padding:5px;
+	position:absolute;
+	left:5%;
+	bottom:10%;
+	font-family:Sans-serif;
+	font-weight:bold;
+	font-size:25px;
+	text-shadow: 2px 2px black;
+}
+#start_screen img:hover{
+	filter: hue-rotate(240deg);
+}
+</style>
+
+
+
+<canvas id='cv' width='1920px' height='1080px'>
+</canvas>
+
+<canvas id='hidden_cv' width='1920px' height='1080px' style='display:none'>
+</canvas>
+
+<div id='scores' style='position:absolute;top:10px;right:80px;'>
+	<div id='kill_counter' style='color:yellow;font-size:30px;display:none;'>kills: 0</div>
+	<div id='highscore_dv' style='color:yellow;font-size:30px;display:none;'>highscore: 0</div>
+	<div id='distance_dv' style='color:yellow;font-size:30px;display:none;'>distance: 0 m</div>
+</div>
+
+<img id='hp_counter' src='character/life_3.png' style='position:absolute;top:110px;left:10px;width:200px;display:none;'>
+<img id='ammo_counter' src='character/ammo_5.png' style='position:absolute;top:145px;left:10px;width:200px;display:none;'>
+<img src='character/ammo_4.png' style='position:absolute;top:145px;left:10px;width:200px;display:none;'>
+<img src='character/ammo_3.png' style='position:absolute;top:145px;left:10px;width:200px;display:none;'>
+<img src='character/ammo_2.png' style='position:absolute;top:145px;left:10px;width:200px;display:none;'>
+<img src='character/ammo_1.png' style='position:absolute;top:145px;left:10px;width:200px;display:none;'>
+<img src='character/ammo_0.png' style='position:absolute;top:145px;left:10px;width:200px;display:none;'>
+
+<img id='jp_meter_img' src='ui/jp_animation/Meter1.png' style='position:absolute;top:10px;left:10px;width:200px;display:none;width:100px;'>
+
+<img id='duck_img' src='character/duck.png' style='display:none;'>
+<img id='spikeball_img' src='enemies/spikeball2.png' style='display:none;'>
+<img id='upper_bg_img' src='ui/upper_backround.png' style='display:none;'>
+<img id='lower_bg_img' src='ui/lower_backround.png' style='display:none;'>
+<img id='squised_duck_img' src='character/squished_duck.png' style='display:none;'>
+<img id='laser_img' src='character/laser.png' style='display:none;'>
+<img id='enemy_tree_img' src='enemies/enemy_tree.png' style='display:none;'>
+<img id='enemy_tree_damaged_1_img' src='enemies/enemy_tree_damaged_1.png' style='display:none;'>
+<img id='enemy_tree_damaged_2_img' src='enemies/enemy_tree_damaged_2.png' style='display:none;'>
+
+<img id='enemy_ghost_img' src='enemies/enemy_ghost.png' style='display:none;'>
+<img id="ground_spike_img" src="enemies/ground_spike.png" style="display:none;">
+<img id="bird_img" src="enemies/bird/BlueBirdFrame1.png" style="display:none;">
+
+<img id="racoon_img" src="enemies/racoon/raconthrowing1.png" style="display:none;">
+<img id="racoon_board_flames_img" src="enemies/racoon/flames/flames1.png" style="display:none;">
+<img id="racoon_board_img" src="enemies/racoon/board.png" style="display:none;">
+
+
+<img src="enemies/bird/BlueBirdFrame2.png" style="display:none;">
+<img src="enemies/bird/GreenBirdFrame1.png" style="display:none;">
+<img src="enemies/bird/GreenBirdFrame2.png" style="display:none;">
+<img src="enemies/bird/OrangeBirdFrame1.png" style="display:none;">
+<img src="enemies/bird/OrangeBirdFrame2.png" style="display:none;">
+<img src="enemies/bird/PinkBirdFrame1.png" style="display:none;">
+<img src="enemies/bird/PinkBirdFrame2.png" style="display:none;">
+<img src="enemies/bird/YellowBirdFrame1.png" style="display:none;">
+<img src="enemies/bird/YellowBirdFrame2.png" style="display:none;">
+
+
+<img src="enemies/racoon/flames/flames2.png" style="display:none;">
+<img src="enemies/racoon/flames/flames3.png" style="display:none;">
+<img src="enemies/racoon/flames/flames4.png" style="display:none;">
+<img src="enemies/racoon/flames/flames5.png" style="display:none;">
+<img src="enemies/racoon/flames/flames6.png" style="display:none;">
+
+<img src="enemies/racoon/raconthrowing2.png" style="display:none;">
+<img src="enemies/racoon/raconthrowing3.png" style="display:none;">
+<img src="enemies/racoon/raconthrowing4.png" style="display:none;">
+<img src="enemies/racoon/raconthrowing5.png" style="display:none;">
+<img src="enemies/racoon/raconthrowing6.png" style="display:none;">
+<img src="enemies/racoon/raconthrowing7.png" style="display:none;">
+<img src="enemies/racoon/raconthrowing8.png" style="display:none;">
+<img src="enemies/racoon/raconthrowing9.png" style="display:none;">
+<img src="enemies/racoon/raconthrowing10.png" style="display:none;">
+<img src="enemies/racoon/raconthrowing11.png" style="display:none;">
+
+
+<img src="enemies/meteor/BlueMeteorFrame0.png" style="display:none;">
+<img src="enemies/meteor/BlueMeteorFrame1.png" style="display:none;">
+<img src="enemies/meteor/BlueMeteorFrame2.png" style="display:none;">
+<img src="enemies/meteor/BlueMeteorFrame3.png" style="display:none;">
+<img src="enemies/meteor/BlueMeteorFrame4.png" style="display:none;">
+<img src="enemies/meteor/BlueMeteorFrame5.png" style="display:none;">
+<img src="enemies/meteor/BlueMeteorFrame6.png" style="display:none;">
+<img src="enemies/meteor/BlueMeteorFrame7.png" style="display:none;">
+<img src="enemies/meteor/GreenMeteorFrame0.png" style="display:none;">
+<img src="enemies/meteor/GreenMeteorFrame1.png" style="display:none;">
+<img src="enemies/meteor/GreenMeteorFrame2.png" style="display:none;">
+<img src="enemies/meteor/GreenMeteorFrame3.png" style="display:none;">
+<img src="enemies/meteor/GreenMeteorFrame4.png" style="display:none;">
+<img src="enemies/meteor/GreenMeteorFrame5.png" style="display:none;">
+<img src="enemies/meteor/GreenMeteorFrame6.png" style="display:none;">
+<img src="enemies/meteor/GreenMeteorFrame7.png" style="display:none;">
+<img src="enemies/meteor/RedMeteorFrame0.png" style="display:none;">
+<img src="enemies/meteor/RedMeteorFrame1.png" style="display:none;">
+<img src="enemies/meteor/RedMeteorFrame2.png" style="display:none;">
+<img src="enemies/meteor/RedMeteorFrame3.png" style="display:none;">
+<img src="enemies/meteor/RedMeteorFrame4.png" style="display:none;">
+<img src="enemies/meteor/RedMeteorFrame5.png" style="display:none;">
+<img src="enemies/meteor/RedMeteorFrame6.png" style="display:none;">
+<img src="enemies/meteor/RedMeteorFrame7.png" style="display:none;">
+
+
+<script src="code.js"></script> 
+
+<style>
+body {
+	overflow: hidden;
+	margin:0px;
+	padding:0px;
+}
+canvas{border:1px solid black;}
+</style>
+</body>
+</html>
