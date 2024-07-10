@@ -30,9 +30,10 @@ A website for creating use case diagrams.
 Used languages/libraries: HTML, CSS, JS, jQuery, PHP.  
 Link for the website: http://users.atw.hu/magicland/diagram  
   
-5. A mapbox test project  
+5. A mapbox "test" project  
+It is not a finished project and doens't really have a purpose - at some point into developing and my employer figuring out what they wanted, we decided to scrap this one and take a different approach. In any case, it was a good way to get to know Mapbox.  
 It's a website with a map and a georefered image. There are four layers you can draw on. On two layers only lanes, on the other two, only polygons.
-Whatever you draw, is added to the selected layer, where you can edit and delete it from the menu on the right. For polygons and lines, their color will change to blue, when you are able to move their points around. It is also possible to export/import your data.  
+Whatever you draw, is added to the selected layer, where you can edit and delete it from the menu on the right. (tip: For polygons and lines, their color will change to blue, when you are able to move their points around.) It is also possible to export/import your data.  
 It is best opened in chrome in my experience.  
 Used languages/libraries: HTML, CSS, JS, Mapbox.  
 Link for the website: http://users.atw.hu/magicland/bors_proba/  
